@@ -41,7 +41,7 @@ public class AgendaDaoImpl implements AgendaDao {
 
     @Override
     public Contacto recuperarContactoPorId(int id) {
-        return agendaRepository.findById(id).orElseThrow(() -> new RuntimeException("No encontrado"));
+        return agendaRepository.findById(id).orElse(null);
     }
 
     @Override
