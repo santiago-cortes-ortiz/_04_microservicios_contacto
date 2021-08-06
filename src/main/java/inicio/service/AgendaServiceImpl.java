@@ -14,11 +14,12 @@ public class AgendaServiceImpl implements AgendaService {
     private AgendaDao agendaDao;
 
     @Override
-    public void agregarContacto(Contacto contacto) {
-        if (agendaDao.recuperarContactoPorId(contacto.getIdContacto()) == null){
+    public void agregarContacto(Contacto contacto) throws Exception {
+        if (agendaDao.recuperarContacto(contacto.getEmail()) == null){
             agendaDao.agregarContacto(contacto);
-
+            return;
         }
+        throw new Exception("Contacto repetido");
     }
 
     @Override
