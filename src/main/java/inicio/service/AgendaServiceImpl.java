@@ -14,12 +14,11 @@ public class AgendaServiceImpl implements AgendaService {
     private AgendaDao agendaDao;
 
     @Override
-    public boolean agregarContacto(Contacto contacto) {
+    public void agregarContacto(Contacto contacto) {
         if (agendaDao.recuperarContactoPorId(contacto.getIdContacto()) == null){
             agendaDao.agregarContacto(contacto);
-            return true;
+
         }
-        return false;
     }
 
     @Override

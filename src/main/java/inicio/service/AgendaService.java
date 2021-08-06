@@ -5,7 +5,7 @@ import inicio.model.Contacto;
 import java.util.List;
 
 public interface AgendaService {
-    boolean agregarContacto(Contacto contacto);
+    void agregarContacto(Contacto contacto) throws Exception;
     List<Contacto> litarContactos();
     boolean eliminarContactoPorId(int id);
     Contacto recuperarContactoPorId(int id);
