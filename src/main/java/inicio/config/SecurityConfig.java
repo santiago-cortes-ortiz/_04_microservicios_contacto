@@ -15,11 +15,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("user1")
-                .password("user1") //lo de {noop} se pone para no obligar a usar mecanismo de encriptación
+                .password("{noop}user1") //lo de {noop} se pone para no obligar a usar mecanismo de encriptación
                 .roles("USER")
                 .and()
                 .withUser("admin")
-                .password("admin")
+                .password("{noop}admin")
                 .roles("USER", "ADMIN");
 
 		/*lo siguiente sería para el caso de que
